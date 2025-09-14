@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Instagram, Facebook, Twitter, Youtube, Linkedin, Github } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { SiGithub, SiInstagram, SiLeetcode, SiLinkedin, SiX } from 'react-icons/si';
-import { SlSocialTwitter } from 'react-icons/sl';
 
 const Contact = ({ theme }) => {
   const [formData, setFormData] = useState({
@@ -29,48 +28,45 @@ const Contact = ({ theme }) => {
     <section
       id="contact"
       data-theme={theme ? 'light' : 'dark'}
-      className="py-16 px-6 flex flex-col justify-center items-center min-h-screen"
-      
+      className="py-23 sm:py-16 px-4 sm:px-6 md:px-10 flex flex-col justify-center items-center min-h-screen"
     >
-      {/* Section Title */}
-      <div className="text-center mb-12">
+
+      <div className="text-center mb-10 sm:mb-12">
         <h2
-          className="text-3xl md:text-4xl lg:text-5xl font-extrabold"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold"
           style={{ color: "var(--text-color)" }}
         >
           Contact Me
         </h2>
         <div
-          className="mt-2 w-16 md:w-20 h-1 mx-auto rounded-full"
+          className="mt-2 w-14 sm:w-16 md:w-20 h-1 mx-auto rounded-full"
           style={{
             background: "linear-gradient(to right, var(--text-color), var(--text-secondary))"
           }}
         />
       </div>
 
-      {/* Content Wrapper */}
       <div
-        className="w-full max-w-6xl grid md:grid-cols-2 gap-12 p-10 rounded-xl shadow-lg"
+        className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg"
         style={{
           background: "var(--card-bg)",
           border: "1px solid var(--card-border)",
           boxShadow: "0 4px 12px var(--shadow)"
         }}
       >
-        {/* LEFT SIDE */}
-        <div className="flex flex-col justify-center gap-6 text-left">
-          <h3 className="text-4xl font-bold mb-3"  style={{ color: "var(--text-color)" }}>
+
+        <div className="flex flex-col justify-center gap-4 sm:gap-6 text-left">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3" style={{ color: "var(--text-color)" }}>
             Get in Touch
           </h3>
-          <p style={{ color: "var(--text-color)" }}>
+          <p className="text-sm sm:text-base" style={{ color: "var(--text-color)" }}>
             I'd like to hear from you!
           </p>
-          <p style={{ color: "var(--text-secondary)" }}>
+          <p className="text-sm sm:text-base" style={{ color: "var(--text-secondary)" }}>
             If you have any inquiries or just want to say Hi, please use the contact form.
           </p>
 
-          {/* Email */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base">
             <Mail style={{ color: "var(--text-color)" }} />
             <a
               href="mailto:yeolebhumika@gmail.com"
@@ -81,8 +77,7 @@ const Contact = ({ theme }) => {
             </a>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex gap-4 mt-4 text-xl">
+          <div className="flex gap-3 sm:gap-4 mt-3 sm:mt-4 text-lg sm:text-xl flex-wrap">
             <a href="https://linkedin.com/in/bhumikayeole" target='blank' style={{ color: "var(--text-color)" }}>
               <SiLinkedin />
             </a>
@@ -92,7 +87,7 @@ const Contact = ({ theme }) => {
             <a href="https://leetcode.com/u/Bhumika_Yeole/" target='blank' style={{ color: "var(--text-color)" }}>
               <SiLeetcode />
             </a>
-            <a href = "https://x.com/bhumika06432939" target='blank' style={{ color: "var(--text-color)" }}>
+            <a href="https://x.com/bhumika06432939" target='blank' style={{ color: "var(--text-color)" }}>
               <SiX />
             </a>
             <a href="https://www.instagram.com/_bhumika_0512?igsh=MWQ0cXYxdHkzNzNwNQ==" target='blank' style={{ color: "var(--text-color)" }}>
@@ -101,15 +96,14 @@ const Contact = ({ theme }) => {
           </div>
         </div>
 
-        {/* RIGHT SIDE (FORM) */}
-        <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
+        <form className="grid grid-cols-1 sm:grid-cols-2 gap-4" onSubmit={handleSubmit}>
           <input
             type="text"
             name="firstName"
             value={formData.firstName}
             onChange={handleInputChange}
             placeholder="First Name"
-            className="border p-3 col-span-1 outline-none"
+            className="border p-3 rounded-md outline-none w-full"
             style={{
               borderColor: "var(--text-color)",
               background: "var(--bg-gradient)",
@@ -122,7 +116,7 @@ const Contact = ({ theme }) => {
             value={formData.lastName}
             onChange={handleInputChange}
             placeholder="Last Name"
-            className="border p-3 col-span-1 outline-none"
+            className="border p-3 rounded-md outline-none w-full"
             style={{
               borderColor: "var(--text-color)",
               background: "var(--bg-gradient)",
@@ -135,7 +129,7 @@ const Contact = ({ theme }) => {
             value={formData.email}
             onChange={handleInputChange}
             placeholder="Email *"
-            className="border p-3 col-span-2 outline-none"
+            className="border p-3 rounded-md outline-none w-full sm:col-span-2"
             style={{
               borderColor: "var(--text-color)",
               background: "var(--bg-gradient)",
@@ -148,7 +142,7 @@ const Contact = ({ theme }) => {
             onChange={handleInputChange}
             placeholder="Message"
             rows="5"
-            className="border p-3 col-span-2 outline-none"
+            className="border p-3 rounded-md outline-none w-full sm:col-span-2"
             style={{
               borderColor: "var(--text-color)",
               background: "var(--bg-gradient)",
@@ -157,7 +151,7 @@ const Contact = ({ theme }) => {
           />
           <button
             type="submit"
-            className="col-span-2 px-6 py-3 rounded-md font-semibold self-end justify-self-end transition"
+            className="px-6 py-3 rounded-md font-semibold transition w-full sm:w-auto sm:col-span-2 justify-self-end"
             style={{
               background: "var(--text-color)",
               color: "var(--nav-bg)"
