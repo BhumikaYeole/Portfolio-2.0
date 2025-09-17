@@ -6,7 +6,7 @@
 
 :root {
   --bg-gradient: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 50%, #f0e1d2 100%);
-  --nav-bg: rgba(240, 225, 210, 0.9);
+  --nav-bg: #f0e1d2e6;
   --text-color: #8b4513;
   --text-secondary: #654321;
   --accent-color: rgba(222, 184, 135, 0.3);
@@ -38,6 +38,7 @@ body {
   transition: all 0.5s ease;
   overflow-x: hidden;
   position: relative;
+  transition : background-color 1s ease, color 1s ease;
 }
 
 
@@ -69,4 +70,21 @@ body {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wave {
+  display: inline-block;                  /* needed so transform works */
+  animation: wave 1.5s infinite ease-in-out;
+  transform-origin: 70% 70%;              /* makes it pivot naturally */
 }

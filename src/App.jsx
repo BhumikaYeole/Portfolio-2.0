@@ -8,6 +8,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Layout from '../components/Layout';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
   return (
     <>
      <Layout>
-      <div className= "bg-[var(--bg-gradient)] text-[var(--text-color)] tracking-widest font-extrabold"> 
+      <div className= " bg-[var(--bg-gradient)] text-[var(--text-color)] tracking-widest font-extrabold "> 
       <Background theme={theme}/> 
       <Navbar theme={theme} setTheme ={setTheme}/>
       <Main theme={theme}/>
@@ -27,6 +28,7 @@ function App() {
       <Contact theme={theme} />
       </div>
      </Layout>
+     <Toaster position="bottom-right" reverseOrder={false} />
     </>
   )
 }

@@ -1,27 +1,50 @@
 import React, { useState } from 'react';
 import { Mail } from 'lucide-react';
 import { SiGithub, SiInstagram, SiLeetcode, SiLinkedin, SiX } from 'react-icons/si';
+import emailjs from '@emailjs/browser';
+import toast from 'react-hot-toast';
 
 const Contact = ({ theme }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // TODO: send to backend or EmailJS
+    
+    const toastId = toast.loading("Sending...");
+
+    emailjs
+      .send(
+        'service_123456',
+        'template_xyz',
+        formData,
+        import.meta.env.VITE_EMAILJS_KEY  
+      )
+      .then(() => {
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          message: '',
+        });
+        toast.success(' Message sent successfully!', { id: toastId });
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error(' Failed to send message. Try again!', { id: toastId });
+      });
   };
 
   return (
@@ -30,7 +53,6 @@ const Contact = ({ theme }) => {
       data-theme={theme ? 'light' : 'dark'}
       className="py-23 sm:py-16 px-4 sm:px-6 md:px-10 flex flex-col justify-center items-center min-h-screen"
     >
-
       <div className="text-center mb-10 sm:mb-12">
         <h2
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold"
@@ -54,7 +76,6 @@ const Contact = ({ theme }) => {
           boxShadow: "0 4px 12px var(--shadow)"
         }}
       >
-
         <div className="flex flex-col justify-center gap-4 sm:gap-6 text-left">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3" style={{ color: "var(--text-color)" }}>
             Get in Touch
@@ -78,19 +99,19 @@ const Contact = ({ theme }) => {
           </div>
 
           <div className="flex gap-3 sm:gap-4 mt-3 sm:mt-4 text-lg sm:text-xl flex-wrap">
-            <a href="https://linkedin.com/in/bhumikayeole" target='blank' style={{ color: "var(--text-color)" }}>
+            <a href="https://linkedin.com/in/bhumikayeole" target="_blank" rel="noreferrer" style={{ color: "var(--text-color)" }}>
               <SiLinkedin />
             </a>
-            <a href="https://github.com/BhumikaYeole" target='blank' style={{ color: "var(--text-color)" }}>
+            <a href="https://github.com/BhumikaYeole" target="_blank" rel="noreferrer" style={{ color: "var(--text-color)" }}>
               <SiGithub />
             </a>
-            <a href="https://leetcode.com/u/Bhumika_Yeole/" target='blank' style={{ color: "var(--text-color)" }}>
+            <a href="https://leetcode.com/u/Bhumika_Yeole/" target="_blank" rel="noreferrer" style={{ color: "var(--text-color)" }}>
               <SiLeetcode />
             </a>
-            <a href="https://x.com/bhumika06432939" target='blank' style={{ color: "var(--text-color)" }}>
+            <a href="https://x.com/bhumika06432939" target="_blank" rel="noreferrer" style={{ color: "var(--text-color)" }}>
               <SiX />
             </a>
-            <a href="https://www.instagram.com/_bhumika_0512?igsh=MWQ0cXYxdHkzNzNwNQ==" target='blank' style={{ color: "var(--text-color)" }}>
+            <a href="https://www.instagram.com/_bhumika_0512" target="_blank" rel="noreferrer" style={{ color: "var(--text-color)" }}>
               <SiInstagram />
             </a>
           </div>

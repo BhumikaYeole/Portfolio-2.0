@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,21 +14,32 @@ const Navbar = (props) => {
           href="#main"
           className="text-[var(--text-color)] text-xl font-semibold hover:underline underline-offset-4 transition"
         >
-          Portfolio
+            Portfolio
         </a>
 
         <nav className="hidden md:flex gap-10 text-[var(--text-color)] text-lg font-[600] items-center">
           <div className="flex gap-10">
-            <a href="#about" className="hover:underline underline-offset-4 transition">
+            <a
+              href="#about"
+              className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 
+               after:w-0 after:h-[2px] after:bg-[var(--text-color)] after:transition-all after:duration-300 
+               hover:after:w-full"
+            >
               About
             </a>
-            <a href="#skills" className="hover:underline underline-offset-4 transition">
+            <a href="#skills" className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 
+               after:w-0 after:h-[2px] after:bg-[var(--text-color)] after:transition-all after:duration-300 
+               hover:after:w-full">
               Skills
             </a>
-            <a href="#projects" className="hover:underline underline-offset-4 transition">
+            <a href="#projects" className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 
+               after:w-0 after:h-[2px] after:bg-[var(--text-color)] after:transition-all after:duration-300 
+               hover:after:w-full">
               Projects
             </a>
-            <a href="#contact" className="hover:underline underline-offset-4 transition">
+            <a href="#contact" className="relative after:content-[''] after:absolute after:left-0 after:bottom-0 
+               after:w-0 after:h-[2px] after:bg-[var(--text-color)] after:transition-all after:duration-300 
+               hover:after:w-full">
               Contact
             </a>
           </div>
@@ -85,7 +96,7 @@ const Navbar = (props) => {
                 }}
                 className="px-3 py-1"
               >
-                {props.theme ? "🌙" : "☀️"} 
+                {props.theme ? "🌙" : "☀️"}
               </button>
             </motion.div>
           )}
@@ -93,7 +104,7 @@ const Navbar = (props) => {
 
         <button
           onClick={() => props.setTheme(!props.theme)}
-          className="ml-4 px-3 py-1 hidden text-[var(--text-color)] md:block "
+          className="ml-4 px-3 py-1 hidden text-[var(--text-color)] md:block  "
         >
           {props.theme ? "🌙" : "☀️"} Mode
         </button>

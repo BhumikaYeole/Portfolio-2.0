@@ -26,11 +26,11 @@ const Main = (props) => {
       id="main"
       className="flex flex-col md:flex-row items-center justify-evenly text-[var(--text-color)] m-auto px-6 sm:px-8 md:px-20 py-12 sm:py-16 md:py-20 bg-[var(--bg-gradient )] min-h-[calc(100vh-0px)]"
     >
-
-
+      
       <div className="space-y-4 text-center md:text-left flex flex-col gap-6 sm:gap-8 md:gap-10 max-w-[90%] sm:max-w-[80%] md:max-w-none">
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-snug">
-          Hi, 👋🏻 <br />
+          Hi, <span className="block w-[66px] wave
+          ">👋🏻</span> <br />
           I'm <span className="">Bhumika Yeole</span>,<br />
           <span className="text-lg sm:text-xl md:text-3xl font-medium transition-all duration-500">
             {roles[index]} :)
@@ -43,9 +43,9 @@ const Main = (props) => {
       </div>
 
       <div className="mt-10 sm:mt-12 md:mt-0 md:ml-10 gap-6 sm:gap-8 md:gap-10 flex flex-col items-center">
-        <div className="h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[250px] md:w-[250px] overflow-hidden shadow-lg border-4 border-[var(--accent-color)] md:rounded-none">
+        <div className="h-[150px] w-[150px] sm:h-[180px] sm:w-[180px] md:h-[250px] md:w-[250px] overflow-hidden shadow-lg border-4 border-[var(--text-color)] rounded md:rounded-full">
           <img
-            src="profile.jpg"
+            src="/assets/port_photo.jpg"
             alt="profile"
             className="h-full w-full object-cover"
           />

@@ -49,14 +49,12 @@ const Card = ({ title, description, tech, link, github, image, theme }) => {
         )}
       </div>
 
-      {/* Project Title */}
       <div className="px-4 pb-3">
         <h3 className={`text-xl font-bold leading-tight `}>
           {title}
         </h3>
       </div>
 
-      {/* Project Image */}
       {image && (
         <>
           <div className={` mb-4 p-2 `}>
@@ -66,22 +64,16 @@ const Card = ({ title, description, tech, link, github, image, theme }) => {
               className="w-full h-48 sm:h-52 object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
-          {/* Subtle divider after image */}
+
           <div className={`mx-4 h-px mb-4`} />
         </>
       )}
-
-      {/* Description */}
       <div className="px-4 mb-4">
         <p className={`text-sm leading-relaxed`}>
           {description}
         </p>
       </div>
-
-      {/* Subtle divider after description */}
       <div className={`mx-4 h-px mb-4 `} />
-
-      {/* Tech Stack */}
       {tech && tech.length > 0 && (
         <div className="px-4 mb-4">
           <div className="flex flex-wrap gap-2">
@@ -97,10 +89,8 @@ const Card = ({ title, description, tech, link, github, image, theme }) => {
         </div>
       )}
 
-      {/* Project Link */}
       {link && (
         <>
-          {/* Subtle divider before project link */}
           <div className={`mx-4 h-px mb-4 `} />
           
           <div className="p-4 pt-0">

@@ -65,7 +65,7 @@ const About = (props) => {
         </div>
         
         {/* Text Content with Mobile Spacing */}
-        <div className="flex flex-col justify-center text-left lg:pl-6 xl:pl-10 space-y-4 md:space-y-6 px-4 sm:px-0">
+        <div className="flex  flex-col justify-center text-left lg:pl-6 xl:pl-10 space-y-4 md:space-y-6 px-4 sm:px-0">
           <p className="text-base sm:text-md md:text-xl leading-relaxed text-[var(--text-secondary)] max-w-2xl">
             Hello! I'm{" "}
             <span className="font-semibold text-[var(--text-color)]">
