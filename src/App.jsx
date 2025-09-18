@@ -9,6 +9,7 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Layout from '../components/Layout';
 import { Toaster } from 'react-hot-toast';
+import Footer from '../components/Footer';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
       <Skills theme={theme}/>
       <Projects theme={theme} />
       <Contact theme={theme} />
+      <Footer theme= {theme}/>
       </div>
      </Layout>
      <Toaster position="bottom-right" reverseOrder={false} />

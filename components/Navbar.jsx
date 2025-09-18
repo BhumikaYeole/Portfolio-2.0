@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +46,7 @@ const Navbar = (props) => {
         </nav>
 
         <button
+        type="button"
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-[var(--text-color)] text-2xl"
         >
