@@ -3,6 +3,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
+    title: "UpSkillr",
+    description:
+      "A scalable, full-stack Learning Management System designed for coaching institutes and educators that integrates course management, assessments, and digital certificates with a coin-based reward system to boost student engagement, all supported by Docker-based development workflows.",
+    image: "../assets/upskillr.png",
+    tools: ["MERN", "TailwindCSS", "Docker", "JWT"],
+    github: "https://github.com/BhumikaYeole/UpSkillr",
+    live: "https://upskillr-iota.vercel.app",
+  },
+  {
     title: "MoneyPal",
     description:
       "An AI-powered personal finance tracker that helps users manage expenses, set budgets, scan receipts to autofill transaction forms with AI and visualize incomes and expenses in the form of piecharts and graphs.",
@@ -12,6 +21,26 @@ const projects = [
     live: "https://money-pal.vercel.app",
   },
   {
+    title: "PlayOrbit",
+    description: 
+      "A platform designed to simplify sports turf booking and player matchmaking, enabling turf providers to manage their facilities and bookings while allowing players to discover turfs, reserve slots, create matches, and collaborate with other players through an approval-based matchmaking system.",
+    image: "../assets/playorbit.png",
+    tools: ["MERN", "TypeScript" , "Three.js"],
+    github: "https://github.com/BhumikaYeole/PlayOrbit",
+    live: "https://playorbit.vercel.app",
+  },
+
+  {
+    title: "SpamShield - AI",
+    description:
+      "A server-rendered, automated email monitoring system that leverages backend automation and ML-integrated background classification to deliver live inbox analysis and real-time spam detection through a dashboard powered by controlled polling.",
+    image: "../assets/spamshield.png",
+    tools: ["ML Algorithms", "IMAPClient", "Flask", "Jinja2"],
+    github: "https://github.com/BhumikaYeole/SpamShield-Dashboard",
+    live: "https://drive.google.com/file/d/1X0B6fGd41uokSjRg6fxGu5q-WqqRUNyW/view?usp=sharing",
+  },
+
+  {
     title: "CampusHub",
     description:
       "A Full stack website focusing on centralizing and streamline the management of college clubs and their activities like event registration, club creation, deletion and authoritative queries.",
@@ -19,33 +48,6 @@ const projects = [
     tools: ["HTML", "CSS", "Express.js", "MongoDB"],
     github: "https://github.com/BhumikaYeole/CampusHub",
     live: "https://college-clubs-cbfc.onrender.com/",
-  },
-  {
-    title: "Polaroid Paradise",
-    description:
-      "A creative and fun Photostrip Generator web app that allows users to generate virtual photostrips just like a real-world photobooth! ",
-    image: "../assets/polaroid.png",
-    tools: ["React", "Vite", "TailwindCSS"],
-    github: "https://github.com/BhumikaYeole/Polaroid-Paradise",
-    live: "https://polaroid-paradise.vercel.app",
-  },
-  {
-    title: "Drum Kit",
-    description:
-      "An interactive virtual drum kit built with HTML, CSS, and JavaScript that lets users play drum sounds using their keyboard or by clicking/tapping on-screen pads.",
-    image: "../assets/drumkit.png",
-    tools: ["HTML", "CSS", "Javascript"],
-    github: "https://github.com/BhumikaYeole",
-    live: "https://github.com/BhumikaYeole",
-  },
-  {
-    title: "Sudoku Solver",
-    description:
-      "A web-based Sudoku Solver that combines my DSA expertise (backtracking algorithm) with web development. This project allows users to input Sudoku puzzles into a 9x9 grid and solve them instantly.",
-    image: "../assets/sudoku.png",
-    tools: ["HTML", "CSS", "Javascript"],
-    github: "https://github.com/BhumikaYeole/SudokuSolver",
-    live: "https://bhumikayeole.github.io/SudokuSolver/",
   },
 ];
 
@@ -171,6 +173,35 @@ const Projects = (props) => {
           </div>
         ))}
       </div>
+
+    <div className="w-full max-w-xl mx-auto mt-10 text-center">
+
+  <div className="w-full h-px bg-[var(--card-border)] mb-10" />
+
+  <h3 className="text-2xl md:text-3xl font-semibold text-[var(--text-color)] mb-3">
+    Explore more of my work
+  </h3>
+
+  <p className="text-[var(--text-secondary)] text-sm sm:text-base mb-7">
+    I’m constantly building and experimenting. Check out my GitHub for more projects and collaborations.
+  </p>
+  <div className="flex justify-center items-center gap-8 mb-6"> {[["15+", "repos"], ["6", "languages"], ["∞", "curiosity"]].map(([num, label], i) => ( <React.Fragment key={i}> {i > 0 && <div className="w-px h-8 bg-[var(--card-border)]" />} <div className="flex flex-col items-center gap-0.5"> <span className="text-lg font-semibold text-[var(--text-color)]">{num}</span> <span className="text-xs text-[var(--text-secondary)] opacity-60 tracking-wide">{label}</span> </div> </React.Fragment> ))} </div>
+
+  <a
+    href="https://github.com/BhumikaYeole"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-6 py-3 rounded-lg 
+               bg-[var(--accent-color)] text-[var(--text-secondary)] font-medium
+               hover:scale-105 transition-all duration-300"
+  >
+    <FaGithub />
+    View GitHub
+  </a>
+
+  <div className="w-full h-px bg-[var(--card-border)] mt-10" />
+
+</div>
     </section>
   );
 };
