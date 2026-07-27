@@ -3,6 +3,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
+    title: "TransitOps",
+    description:
+      "A centralized platform for managing the complete lifecycle of transport operations - vehicle registration, driver management, trip dispatching, maintenance, fuel & expense tracking, and operational analytics, replacing the spreadsheets and manual logbooks most logistics teams still rely on.",
+    image: "../assets/transit-ops.png",
+    tools: ["MERN", "RBAC", "NeoBrutalism-UI", "JWT"],
+    github: "https://github.com/BhumikaYeole/TransitOps",
+    live: "https://transit-ops-vert.vercel.app",
+  },
+  {
     title: "UpSkillr",
     description:
       "A scalable, full-stack Learning Management System designed for coaching institutes and educators that integrates course management, assessments, and digital certificates with a coin-based reward system to boost student engagement, all supported by Docker-based development workflows.",
@@ -38,16 +47,6 @@ const projects = [
     tools: ["ML Algorithms", "IMAPClient", "Flask", "Jinja2"],
     github: "https://github.com/BhumikaYeole/SpamShield-Dashboard",
     live: "https://drive.google.com/file/d/1X0B6fGd41uokSjRg6fxGu5q-WqqRUNyW/view?usp=sharing",
-  },
-
-  {
-    title: "CampusHub",
-    description:
-      "A Full stack website focusing on centralizing and streamline the management of college clubs and their activities like event registration, club creation, deletion and authoritative queries.",
-    image: "../assets/campus-hub.png",
-    tools: ["HTML", "CSS", "Express.js", "MongoDB"],
-    github: "https://github.com/BhumikaYeole/CampusHub",
-    live: "https://college-clubs-cbfc.onrender.com/",
   },
 ];
 
